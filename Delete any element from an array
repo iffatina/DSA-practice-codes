@@ -14,7 +14,7 @@ int main()
         cout<<roll[i]<< " ";
     }
     cout<<endl;
-    int k;
+    int k; 
     cin>>k;
      cout << "After deleting "<<k<<"th element from array : " << endl;
      if (k>n) {cout<< "Position does not exist" <<endl;}
