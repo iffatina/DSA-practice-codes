@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+#define cs contestants_selcted
+using namespace std;
+int main()
+{
+    int n; cin>>n;
+    int cs[n];
+    for (int i=0;i<n; i++)
+    {
+        cin>>cs[i];
+    }
+    int selected;
+    cin>>selected;
+    bool found= 0;
+    for (int i=0;i<n; i++)
+    {
+        if(cs[i]==selected)
+            { cout<< cs[i]<<" has been selected"<<endl;
+            found=1;
+            break;
+
+        }
+    }
+    if( found==0)
+    {
+        cout<<"None found"<<endl;
+    }
+
+    cout<<endl;
+
+
+   return 0;
+}
