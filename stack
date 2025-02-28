@@ -1,0 +1,88 @@
+#include<bits/stdc++.h>
+#define n 5
+using namespace std;
+
+
+int top=-1;
+int s_tack[n];
+void push(int x)
+{
+    if(top==n-1)
+    {
+        cout<<" Stack is full" <<endl;
+        return;
+    }
+    top++;
+    s_tack[top]=x;
+}
+void pop()
+{
+    if (top==-1)
+    {
+        cout<<"stack is empty"<<endl;
+        return;
+    }
+    top--;
+
+
+
+}
+void show()
+{ if(top==-1)
+{
+    cout<<"stack is empty"<<endl;
+    return;
+
+}
+    for(int i=top;i>=0;i--)
+    {
+        cout<<s_tack[i]<< endl;
+    }
+    cout<<endl;
+}
+bool empt_y()
+{
+    if(top==-1)
+    {  cout<< "stack is empty"<<endl;
+        return true;
+    }
+    cout<< "stack is not empty"<<endl;
+    return false;
+}
+void peek()
+{  if(top==-1)
+{
+    cout<<"stack is empty"<<endl;
+    return;
+
+}
+cout<< s_tack[top]<<endl;
+
+}
+int main()
+{ int s_element[n];
+for(int i=0;i<n;i++)
+{
+    cin>>s_element[i];
+}
+push(s_element[0]);
+push(s_element[1]);
+push(s_element[2]);
+push(s_element[3]);
+push(s_element[4]);
+     show();
+
+pop();
+show();
+peek();
+pop();
+empt_y();
+pop();
+show();
+pop();
+show();
+empt_y();
+
+
+  return 0;
+}
