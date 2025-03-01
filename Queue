@@ -1,0 +1,96 @@
+#include<bits/stdc++.h>
+#define r rear
+#define fornt f
+#define n 7
+using namespace std;
+
+int f =-1;
+int r = -1;
+int qu[n];
+void enqueue(int x)
+{
+    if(r==n-1)
+    {
+        cout<< "Queue is full"<<endl;
+        return;
+    }
+    if(f==-1)
+    {
+        f++;
+    }
+    r++;
+    qu[r]=x;
+}
+void dequeue()
+{
+    if(f==-1||f>r)
+    {
+        cout<< "Queue is empty"<<endl;
+        return;
+    }
+    f++;
+
+}
+void show()
+{
+   if(f==-1||f>r)
+    {
+        cout<< "Queue is empty"<<endl;
+        return;
+    }
+    for(int i=f;i<=rear;i++)
+    {
+        cout<<qu[i]<<" ";
+    }
+    cout<<endl;
+}
+void isempty()
+{
+    if(f==-1||f>r)
+    {
+        cout<< "Queue is empty"<<endl;
+        return;
+    }
+    cout<< "Queue is not empty"<<endl;
+}
+void isfull()
+{
+    if(r==n-1)
+    {
+        cout<< "Queue is full"<<endl;
+        return;
+    }
+    cout<< "Queue is not full"<<endl;
+
+}
+void peek()
+{
+    if(f==-1||f>r)
+    {
+        cout<< "Queue is empty"<<endl;
+        return;
+    }
+    cout<< qu[f]<<endl;
+}
+
+int main()
+{
+    show();
+    enqueue(23);
+    enqueue(26);
+    enqueue(29);
+    enqueue(33);
+    peek();
+    isfull();
+    enqueue(36);
+    enqueue(39);
+    enqueue(43);
+    enqueue(46);
+    show();
+    dequeue();
+     enqueue(46);
+     show();
+
+
+    return 0;
+}
