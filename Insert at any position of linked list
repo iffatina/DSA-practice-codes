@@ -1,1 +1,51 @@
 
+#include<bits/stdc++.h>
+using namespace std;
+class Node
+{ public:
+    int data;
+    Node* next;
+
+};
+void display(Node* n)
+{
+    while( n!=nullptr)
+    {
+       cout<<n->data<<'\n';
+       n=n->next;
+    }
+}
+void insert_any(Node* n, int v)
+{
+    if (n==nullptr){
+    cout<< "not valid"<<"\n";
+    return;}
+    Node* newNode= new Node();
+    newNode->data=v;
+    newNode->next=n->next;
+    n->next=newNode;
+
+}
+
+int main()
+{
+Node* head= new Node();
+Node* one=new Node();
+Node* two= new Node();
+head->data=1;
+head->next=one;
+one->data=2;
+one->next=two;
+two->data=3;
+two->next= nullptr;
+
+
+display(head);
+insert_any(head,4);
+display(head);
+insert_any(two,5);
+
+display(head);
+    return 0;
+
+}
